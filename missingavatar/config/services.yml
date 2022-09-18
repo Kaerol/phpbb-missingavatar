@@ -1,0 +1,14 @@
+services:	
+    kaerol.simpleshop.posting_listener:
+        class: kaerol\missingavatar\event\user_listener
+        arguments:
+            - '@service_container'
+            - '@auth'
+            - '@config'
+            - '@dispatcher'
+            - '@notification_manager'
+            - '@request'
+            - '@template'
+            - '@user'
+        tags:
+            - { name: event.listener }		
